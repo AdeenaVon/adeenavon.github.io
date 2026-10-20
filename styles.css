@@ -1,0 +1,36 @@
+body {
+    background-color: #FDFCF8;
+}
+
+.nav-btn {
+    padding: 1rem 0;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    color: #4F6D4F;
+    border-bottom-color: #4F6D4F;
+}
+
+.nav-btn.active {
+    color: #4F6D4F;
+    border-bottom-color: #4F6D4F;
+    font-weight: 700;
+}
+
+.thick-separator {
+    border: 0;
+    height: 2px;
+    background-color: #2A2621;
+    margin: 3rem 0;
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

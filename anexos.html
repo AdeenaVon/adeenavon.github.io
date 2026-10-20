@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anexos - Reto Agrocebada 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="CEVIDA.png" type="image/png">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'serif': ['Merriweather', 'serif'],
+                        'sans': ['"Open Sans"', 'sans-serif'],
+                        'mono': ['"Fira Code"', 'monospace'],
+                    },
+                    colors: {
+                        'academic-bg': '#FDFCF8',
+                        'academic-text': '#2A2621',
+                        'academic-green': '#4F6D4F',
+                        'academic-gold': '#C89B3C',
+                        'academic-box': '#F5F2E9',
+                        'academic-gray': '#5E5C58',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-serif leading-relaxed flex flex-col min-h-screen">
+
+    <nav class="border-b border-gray-200 bg-white/80 backdrop-blur sticky top-0 z-50">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-center space-x-8 h-16">
+                <a href="index.html" class="nav-btn font-sans text-sm tracking-wide text-gray-600 uppercase">Reporte</a>
+                <a href="equipo.html" class="nav-btn font-sans text-sm tracking-wide text-gray-600 uppercase">Equipo</a>
+                <a href="anexos.html" class="nav-btn active font-sans text-sm tracking-wide text-gray-600 uppercase">Anexos</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-6 lg:px-8 py-12 md:py-16 flex-grow">
+        <section class="fade-in">
+            <header class="mb-12">
+                <h1 class="text-4xl font-bold font-serif text-academic-text mb-4">Anexos y Descargables</h1>
+                <p class="text-lg font-serif italic text-academic-gray">
+                    Material suplementario, bases de datos procesadas y recursos de código fuente correspondientes a nuestro análisis.
+                </p>
+                <div class="w-16 h-1 bg-academic-green mt-6"></div>
+            </header>
+
+            <div class="space-y-4 max-w-2xl">
+                <!-- Link PDF -->
+                <a href="Reporte técnico Agrocebada.pdf" class="group flex items-center p-6 bg-white border border-gray-200 rounded hover:border-academic-green hover:bg-academic-box transition duration-200">
+                    <div class="text-academic-gold group-hover:text-academic-green transition mr-6">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 13h6m-6 4h6m-6-8h.01"></path></svg>
+                    </div>
+                    <div>
+                        <h4 class="font-sans font-bold text-academic-text group-hover:text-academic-green text-lg">Reporte Técnico Completo (PDF)</h4>
+                        <p class="font-sans text-sm text-academic-gray">Documento original con metodología extensa y referencias bibliográficas.</p>
+                    </div>
+                </a>
+
+                <!-- Link CSV -->
+                <a href="predicciones_59_parcelas.csv" class="group flex items-center p-6 bg-white border border-gray-200 rounded hover:border-academic-green hover:bg-academic-box transition duration-200">
+                    <div class="text-academic-gold group-hover:text-academic-green transition mr-6">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path></svg>
+                    </div>
+                    <div>
+                        <h4 class="font-sans font-bold text-academic-text group-hover:text-academic-green text-lg">Dataset Limpio (.csv)</h4>
+                        <p class="font-sans text-sm text-academic-gray">Matriz final consolidada (nubosidad < 10%) de las parcelas evaluadas.</p>
+                    </div>
+                </a>
+
+                <!-- Link Modelo -->
+                <a href="modelo_final (1).joblib" class="group flex items-center p-6 bg-white border border-gray-200 rounded hover:border-academic-green hover:bg-academic-box transition duration-200">
+                    <div class="text-academic-gold group-hover:text-academic-green transition mr-6">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                    </div>
+                    <div>
+                        <h4 class="font-sans font-bold text-academic-text group-hover:text-academic-green text-lg">Modelo Entrenado (.joblib)</h4>
+                        <p class="font-sans text-sm text-academic-gray">Objeto binario exportado listo para integrarse en pipelines de producción.</p>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="mt-20 border-t border-gray-200 py-8 bg-white text-center">
+        <p class="font-sans text-sm tracking-wide text-gray-500 uppercase">
+            Reto Agrocebada 2026 • Innovación y Ciencia de Datos
+        </p>
+    </footer>
+</body>
+</html>

@@ -1,13 +1,218 @@
-<!-- creamos la pagina principal para la presentacion de el reto -->
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CeVida</title>
+    <title>Reporte Técnico - Reto Agrocebada 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="CEVIDA.png" type="image/x-icon">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'serif': ['Merriweather', 'serif'],
+                        'sans': ['"Open Sans"', 'sans-serif'],
+                        'mono': ['"Fira Code"', 'monospace'],
+                    },
+                    colors: {
+                        'academic-bg': '#FDFCF8',
+                        'academic-text': '#2A2621',
+                        'academic-green': '#4F6D4F',
+                        'academic-gold': '#C89B3C',
+                        'academic-box': '#F5F2E9',
+                        'academic-gray': '#5E5C58',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-    <h1>Wazaaaaaaaaa</h1>
+<body class="font-serif leading-relaxed">
+
+    <nav class="border-b border-gray-200 bg-white/80 backdrop-blur sticky top-0 z-50">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-center space-x-8 h-16">
+                <a href="index.html" class="nav-btn active font-sans text-sm tracking-wide text-gray-600 uppercase">Reporte</a>
+                <a href="equipo.html" class="nav-btn font-sans text-sm tracking-wide text-gray-600 uppercase">Equipo</a>
+                <a href="anexos.html" class="nav-btn font-sans text-sm tracking-wide text-gray-600 uppercase">Anexos</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-6 lg:px-8 py-12 md:py-16">
+        <section class="fade-in block">
+            <header class="mb-10">
+                <div class="font-sans text-xs md:text-sm tracking-[0.25em] text-academic-green uppercase font-semibold mb-4">
+                    Reporte Técnico • Vol. 1 • 2026
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold font-serif text-academic-text leading-[1.2] mb-4">
+                    Modelo predictivo de rendimiento de cebada maltera: Reto Agrocebada
+                </h1>
+                <h2 class="text-xl md:text-2xl font-serif italic text-academic-gray">
+                    Equipo de Ciencia de Datos • Departamento de Agronomía
+                </h2>
+            </header>
+
+            <div class="bg-academic-box border-l-[6px] border-academic-gold p-6 md:p-8 mb-10 shadow-sm">
+                <div class="font-sans text-xs tracking-[0.15em] text-academic-green uppercase font-bold mb-3">
+                    Resumen
+                </div>
+                <p class="text-lg text-academic-text leading-relaxed mb-6 font-serif">
+                    Se presenta el desarrollo de un modelo de aprendizaje automático diseñado para estimar el rendimiento (t/ha) de cebada maltera, utilizando un conjunto de 197 parcelas (138 de entrenamiento y 59 de predicción). La metodología siguió el estándar CRISP-DM, integrando datos de topografía, clima (precipitación y temperaturas) y series temporales de índices satelitales filtrados rigurosamente a menos del 10% de nubosidad. El análisis demostró que las parcelas se agrupan en 23 zonas climáticas determinantes. Se implementó un modelo híbrido que suaviza el promedio productivo por zona agroclimática y utiliza regresión lineal regularizada (Ridge) como respaldo, logrando un <strong class="font-bold">RMSE de 0.54 t/ha</strong> y un <strong class="font-bold">MAE de 0.39 t/ha</strong>, superando a algoritmos de bosque aleatorio (Random Forest) en capacidad de generalización espacial.
+                </p>
+            </div>
+
+            <hr class="thick-separator">
+
+            <article class="space-y-8 text-academic-text text-lg">
+                <div>
+                    <h3 class="text-3xl font-bold mb-4 font-serif flex items-baseline">
+                        <span class="text-academic-green mr-3 text-4xl">1.</span> Descripción del reto y Justificación
+                    </h3>
+                    <p class="mb-4">
+                        El sector agroalimentario en México enfrenta desafíos estructurales de gran magnitud, entre los cuales destacan la variabilidad climática global, las alteraciones drásticas en los patrones hídricos y térmicos estacionales, así como los márgenes de productividad cada vez más ajustados que ponen en riesgo la estabilidad de los productores. En cultivos destinados al sector alimentario y la economía regional, como la cebada cultivada en los estados de Hidalgo, Tlaxcala y Puebla, la falta de información oportuna, transparente y verificable sobre el rendimiento real de las cosechas representa uno de los principales obstáculos operativos y comerciales. Esta brecha de información impacta de manera directa y negativa en la inclusión financiera de la población rural, ya que restringe la capacidad de las instituciones de banca de desarrollo, comercial y las empresas aseguradoras para evaluar los riesgos agropecuarios, encareciendo el acceso a servicios financieros adaptados a la realidad productiva de cada región agrícola.
+                    </p>
+                    <p>
+                        Frente a esta problemática, la iniciativa promovida por los Fideicomisos Instituidos en Relación con la Agricultura (FIRA) a través del programa de Apoyo a la Innovación Tecnológica en el marco de la INdustria 4.0, impulsa la adopción de herramientas avanzadas de observación remota y ciencia de datos aplicada al campo. El reto Agrocebada busca anticipar el rendimiento de los cultivos antes de la cosecha para mitigar asimetrías de información en la cadena de valor agrícola.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="text-3xl font-bold mb-4 font-serif flex items-baseline mt-12">
+                        <span class="text-academic-green mr-3 text-4xl">2.</span> Metodología (CRISP-DM)
+                    </h3>
+                    <p class="mb-4">
+                        El desarrollo siguió el marco CRISP-DM (Chapman et al., 1999), organizando el proyecto iterativamente. El entrenamiento del modelo se limitó a los datos del ciclo abril-octubre de 2025. Se integraron imágenes del satélite Planet (NDVI, EVI, LAI y MSAVI), precipitación mensual de CHIRPS, temperaturas de CHIRTS-ERA5, y elevación y pendiente (INEGI, 2025).
+                    </p>
+                    <p class="mb-4">
+                        Se excluyeron las observaciones satelitales con más de 10% de nubosidad, conservando 31,708 de 47,804 registros. El análisis exploratorio reveló fuertes asociaciones climáticas: temperatura mínima (r=0.60), precipitación (r=-0.46) y temperatura máxima (r=-0.29); la topografía alcanzó r=0.29. En los índices vegetativos, el NDVI se agregó por etapas fenológicas, destacando el NDVI de mayo-junio con una correlación de +0.53.
+                    </p>
+                    
+                    <table class="w-full text-left border-collapse mt-6 mb-8 font-sans shadow-sm">
+                        <thead>
+                            <tr class="border-b-2 border-academic-gray text-academic-text bg-academic-box">
+                                <th class="py-3 px-4 font-bold border border-gray-300">Feature</th>
+                                <th class="py-3 px-4 font-bold border border-gray-300">Correlación con rendimiento</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-academic-text">
+                            <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                <td class="py-2 px-4 border border-gray-300">tmin_ciclo</td>
+                                <td class="py-2 px-4 border border-gray-300">+0.60</td>
+                            </tr>
+                            <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                <td class="py-2 px-4 border border-gray-300">prec_ciclo_mm</td>
+                                <td class="py-2 px-4 border border-gray-300">-0.46</td>
+                            </tr>
+                            <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                <td class="py-2 px-4 border border-gray-300">tmax_ciclo</td>
+                                <td class="py-2 px-4 border border-gray-300">-0.29</td>
+                            </tr>
+                            <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                <td class="py-2 px-4 border border-gray-300">elevacion_m</td>
+                                <td class="py-2 px-4 border border-gray-300">+0.29</td>
+                            </tr>
+                            <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                <td class="py-2 px-4 border border-gray-300">pendiente_grados</td>
+                                <td class="py-2 px-4 border border-gray-300">+0.29</td>
+                            </tr>
+                            <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                <td class="py-2 px-4 border border-gray-300">ndvi_may_jun</td>
+                                <td class="py-2 px-4 border border-gray-300">+0.53</td>
+                            </tr>
+                            <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                <td class="py-2 px-4 border border-gray-300">ndvi_jul_sep</td>
+                                <td class="py-2 px-4 border border-gray-300">-0.28</td>
+                            </tr>
+                            <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                <td class="py-2 px-4 border border-gray-300">ndvi_oct</td>
+                                <td class="py-2 px-4 border border-gray-300">+0.41</td>
+                            </tr>
+                            <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                <td class="py-2 px-4 border border-gray-300">caida_pico_oct</td>
+                                <td class="py-2 px-4 border border-gray-300">-0.50</td>
+                            </tr>
+                    </tbody>
+                </table>
+                </div>
+
+                <div>
+                    <h3 class="text-3xl font-bold mb-4 font-serif flex items-baseline mt-12">
+                        <span class="text-academic-green mr-3 text-4xl">3.</span> Resultados y Discusión
+                    </h3>
+                    <p class="mb-4">
+                        Se compararon modelos iniciales de Random Forest y regresión Ridge. La evaluación mostró que el desempeño tenía una gran dependencia con respecto a la distribución de las parcelas entre las zonas climáticas. El análisis reveló que las parcelas de entrenamiento se agrupan en solo 23 zonas de clima y que estas explican gran parte de la variación productiva.
+                    </p>
+                    <p class="mb-4">
+                        Este hallazgo motivó la adopción de un modelo híbrido: la predicción es el promedio del rendimiento de las parcelas de entrenamiento de la misma zona, suavizado hacia el promedio general. Si la zona carece de datos, se emplea Ridge con las nueve variables candidatas.
+                    </p>
+                    <table class="font-sans w-full text-left border-collapse mt-4 mb-4">
+                        <thead>
+                            <tr class="border-b-2 border-academic-gray">
+                                <th class="py-2">Modelo Evaluado</th>
+                                <th class="py-2">RMSE (t/ha)</th>
+                                <th class="py-2">MAE (t/ha)</th>
+                                <th class="py-2">Notas de Validación</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-gray-200">
+                                <td class="py-2">Ingenuo (Promedio Global)</td>
+                                <td class="py-2">0.851</td>
+                                <td class="py-2">0.754</td>
+                                <td class="py-2">Línea base</td>
+                            </tr>
+                            <tr class="border-b border-gray-200">
+                                <td class="py-2">Random Forest (9 variables)</td>
+                                <td class="py-2">0.555</td>
+                                <td class="py-2">0.419</td>
+                                <td class="py-2">Sobreajuste en zonas nuevas (0.84)</td>
+                            </tr>
+                            <tr class="border-b border-gray-200">
+                                <td class="py-2">Ridge C (Referencia)</td>
+                                <td class="py-2">0.553</td>
+                                <td class="py-2">0.421</td>
+                                <td class="py-2">Generaliza mejor (0.66 en nuevas)</td>
+                            </tr>
+                            <tr class="bg-academic-box font-semibold text-academic-green">
+                                <td class="py-2">Modelo Híbrido (Zona Suavizada k=1)</td>
+                                <td class="py-2">0.543</td>
+                                <td class="py-2">0.391</td>
+                                <td class="py-2">Modelo Seleccionado</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>
+                        El modelo final fue aplicado a las 59 parcelas de predicción, obteniendo un promedio estimado de 3.95 t/ha, congruente con los datos de entrenamiento (3.96 t/ha), con predicciones en el rango de 2.96 a 4.58 t/ha.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="text-3xl font-bold mb-4 font-serif flex items-baseline mt-12">
+                        <span class="text-academic-green mr-3 text-4xl">4.</span> Impacto Financiero y Sector AGRO
+                    </h3>
+                    <p class="mb-4">
+                        La ciencia de datos impulsa la inclusión financiera en el sector agropecuario al transformar información agrícola, climática y satelital en indicadores útiles para la toma de decisiones. El modelo predictivo desarrollado permite a las instituciones evaluar los riesgos asociados con la producción agrícola con mayor precisión.
+                    </p>
+                    <p>
+                        Esta capacidad predictiva facilita la evaluación del estado de los cultivos y la viabilidad de las unidades agrícolas, apoyando el diseño de créditos más justos y de seguros agrícolas (como micro-seguros paramétricos) mejor fundamentados, reduciendo los costos y el tiempo necesarios para recopilar información de campo.
+                    </p>
+                </div>
+            </article>
+
+        </section>
+    </main>
+
+    <footer class="mt-20 border-t border-gray-200 py-8 bg-white text-center">
+        <p class="font-sans text-sm tracking-wide text-gray-500 uppercase">
+            Reto Agrocebada 2026 • Innovación y Ciencia de Datos
+        </p>
+    </footer>
 </body>
 </html>
