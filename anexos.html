@@ -56,7 +56,7 @@
 
             <div class="space-y-4 max-w-2xl">
                 <!-- Link PDF -->
-                <a href="Reporte técnico Agrocebada.pdf" class="group flex items-center p-6 bg-white border border-gray-200 rounded hover:border-academic-green hover:bg-academic-box transition duration-200">
+                <a href="Reporte técnico Agrocebada.pdf" download class="group flex items-center p-6 bg-white border border-gray-200 rounded hover:border-academic-green hover:bg-academic-box transition duration-200">
                     <div class="text-academic-gold group-hover:text-academic-green transition mr-6">
                         <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 13h6m-6 4h6m-6-8h.01"></path></svg>
                     </div>
@@ -67,18 +67,18 @@
                 </a>
 
                 <!-- Link CSV -->
-                <a href="predicciones_59_parcelas.csv" class="group flex items-center p-6 bg-white border border-gray-200 rounded hover:border-academic-green hover:bg-academic-box transition duration-200">
+                <a href="predicciones_59_parcelas.csv" download class="group flex items-center p-6 bg-white border border-gray-200 rounded hover:border-academic-green hover:bg-academic-box transition duration-200">
                     <div class="text-academic-gold group-hover:text-academic-green transition mr-6">
                         <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path></svg>
                     </div>
                     <div>
-                        <h4 class="font-sans font-bold text-academic-text group-hover:text-academic-green text-lg">Dataset Limpio (.csv)</h4>
-                        <p class="font-sans text-sm text-academic-gray">Matriz final consolidada (nubosidad < 10%) de las parcelas evaluadas.</p>
+                        <h4 class="font-sans font-bold text-academic-text group-hover:text-academic-green text-lg">Dataset de Predicciones (.csv)</h4>
+                        <p class="font-sans text-sm text-academic-gray">Matriz final consolidada con las predicciones de las 59 parcelas evaluadas.</p>
                     </div>
                 </a>
 
-                <!-- Link Modelo -->
-                <a href="modelo_final (1).joblib" class="group flex items-center p-6 bg-white border border-gray-200 rounded hover:border-academic-green hover:bg-academic-box transition duration-200">
+                <!-- Link Modelo Joblib -->
+                <a href="modelo_final (1).joblib" download class="group flex items-center p-6 bg-white border border-gray-200 rounded hover:border-academic-green hover:bg-academic-box transition duration-200">
                     <div class="text-academic-gold group-hover:text-academic-green transition mr-6">
                         <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
                     </div>
@@ -88,11 +88,46 @@
                     </div>
                 </a>
 
+                <!-- Link Script: Dataset Construction -->
+                <a href="dataset_construction.py" download class="group flex items-center p-6 bg-white border border-gray-200 rounded hover:border-academic-green hover:bg-academic-box transition duration-200">
+                    <div class="text-academic-gold group-hover:text-academic-green transition mr-6">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                    </div>
+                    <div>
+                        <h4 class="font-sans font-bold text-academic-text group-hover:text-academic-green text-lg">Script: Construcción del Dataset (.py)</h4>
+                        <p class="font-sans text-sm text-academic-gray">Código para limpiar nubosidad (< 10%) y extraer variables satelitales, climáticas y topográficas.</p>
+                    </div>
+                </a>
+
+                <!-- Link Script: Modelo Final -->
+                <a href="modelo_final.py" download class="group flex items-center p-6 bg-white border border-gray-200 rounded hover:border-academic-green hover:bg-academic-box transition duration-200">
+                    <div class="text-academic-gold group-hover:text-academic-green transition mr-6">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                    </div>
+                    <div>
+                        <h4 class="font-sans font-bold text-academic-text group-hover:text-academic-green text-lg">Script: Entrenamiento y Predicción (.py)</h4>
+                        <p class="font-sans text-sm text-academic-gray">Código sklearn del modelo híbrido regularizado para estimar las 59 parcelas.</p>
+                    </div>
+                </a>
+
+                <!-- Link Participación Integrantes -->
+                <a href="Participacion de los integrantes y Anexos.pdf" download class="group flex items-center p-6 bg-white border border-gray-200 rounded hover:border-academic-green hover:bg-academic-box transition duration-200">
+                    <div class="text-academic-gold group-hover:text-academic-green transition mr-6">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 class="font-sans font-bold text-academic-text group-hover:text-academic-green text-lg">Participación de los Integrantes (PDF)</h4>
+                        <p class="font-sans text-sm text-academic-gray">Documento que detalla las contribuciones individuales y roles del equipo durante las 4 semanas de la metodología CRISP-DM[cite: 18].</p>
+                    </div>
+                </a>
+
             </div>
         </section>
     </main>
 
-    <footer class="mt-20 border-t border-gray-200 py-8 bg-white text-center">
+    <footer class="mt-auto border-t border-gray-200 py-8 bg-white text-center">
         <p class="font-sans text-sm tracking-wide text-gray-500 uppercase">
             Reto Agrocebada 2026 • Innovación y Ciencia de Datos
         </p>
